@@ -1,11 +1,16 @@
 # booking_system
-Creating a Django Project with Docker
+
+#Creating a Django Project with Docker
 Here's how to set up a Django project using Docker:
-Step 1: Project Directory Setup
+
+# Step 1: Project Directory Setup
+
 First, create a project directory and navigate into it:
 bashCopymkdir django-docker-project
 cd django-docker-project
-Step 2: Create Required Files
+
+# Step 2: Create Required Files
+
 Create a Dockerfile
 Create a file named Dockerfile:
 bashCopytouch Dockerfile
@@ -62,10 +67,14 @@ services:
 
 volumes:
   postgres_data:
-Step 3: Create Django Project
+  
+# Step 3: Create Django Project
+
 Build the initial Docker image and create a new Django project:
 bashCopydocker-compose run web django-admin startproject core .
-Step 4: Configure Database
+
+# Step 4: Configure Database
+
 Update core/settings.py to use PostgreSQL:
 pythonCopy# Replace the DATABASES section with:
 DATABASES = {
@@ -80,12 +89,18 @@ DATABASES = {
 }
 Also add the postgres driver to requirements.txt:
 Copypsycopg2-binary>=2.9.6
-Step 5: Run the Project
+
+# Step 5: Run the Project
+
 Start the Docker containers:
 bashCopydocker-compose up --build
 Your Django application will be available at http://localhost:8000
-Step 6: Create an App
+
+ # Step 6: Create an App
+ 
 In a separate terminal:
 bashCopydocker-compose exec web python manage.py startapp myapp
-Step 7: Run Migrations
+
+# Step 7: Run Migrations
+
 bashCopydocker-compose exec web python manage.py migrate
