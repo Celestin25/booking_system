@@ -87,5 +87,5 @@ Your Django application will be available at http://localhost:8000
 Step 6: Create an App
 In a separate terminal:
 bashCopydocker-compose exec web python manage.py startapp myapp
-Step 7: Run Migrations
+Step 7: Running Migrations
 bashCopydocker-compose exec web python manage.py migrate
