@@ -52,5 +52,5 @@ docker-compose exec web python manage.py startapp myapp
 
 # Step 7: Run Migrations
 
-docker-compose exec web python manage.py migrate
+docker-compose exec web python manage.py migrat
 
